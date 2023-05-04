@@ -18,7 +18,7 @@ class LieuxCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('Commune');
-        yield IntegerField::new('cp');
+        yield IntegerField::new('cp')->setLabel('Code postal');
     }
 
 }

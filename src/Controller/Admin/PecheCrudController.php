@@ -22,9 +22,9 @@ class PecheCrudController extends AbstractCrudController
         yield AssociationField::new('Poisson');
         yield AssociationField::new('Climat');
         yield AssociationField::new('SessionPeche');
-        yield IntegerField::new('Temperature');
-        yield IntegerField::new('Taille');
-        yield TimeField::new('Heure');
+        yield IntegerField::new('Temperature')->setLabel('Température en °C');
+        yield IntegerField::new('Taille')->setLabel('Taille en cm');
+        yield TimeField::new('Heure')->setLabel('Heure de capture');
 
     }
 
