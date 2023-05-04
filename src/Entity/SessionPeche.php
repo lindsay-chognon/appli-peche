@@ -89,4 +89,10 @@ class SessionPeche
 
         return $this;
     }
+
+    public function __toString()
+    {
+
+        return "Session du ".$this->getDate()->format('d-m-Y'). " à ".$this->getLieu()->getCommune(). " (".$this->getLieu()->getCP(). ")";
+    }
 }
