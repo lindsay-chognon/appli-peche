@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\LieuxRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: LieuxRepository::class)]
 class Lieux
@@ -20,9 +21,11 @@ class Lieux
     private ?string $CP = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on:"create")]
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on:"update")]
     private ?\DateTimeImmutable $updated_at = null;
 
     public function getId(): ?int

@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PecheRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PecheRepository::class)]
 class Peche
@@ -42,9 +43,11 @@ class Peche
     private ?\DateTimeInterface $Heure = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on:"create")]
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on:"update")]
     private ?\DateTimeImmutable $updated_at = null;
 
     public function getId(): ?int

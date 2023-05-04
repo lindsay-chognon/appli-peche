@@ -6,6 +6,7 @@ use App\Repository\PecheursRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PecheursRepository::class)]
 class Pecheurs
@@ -25,9 +26,11 @@ class Pecheurs
     private Collection $peches;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on:"create")]
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on:"update")]
     private ?\DateTimeImmutable $updated_at = null;
 
     public function __construct()
