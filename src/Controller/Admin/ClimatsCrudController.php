@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Climats;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ClimatsCrudController extends AbstractCrudController
 {
@@ -12,14 +13,10 @@ class ClimatsCrudController extends AbstractCrudController
         return Climats::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('Climat');
     }
-    */
+
 }

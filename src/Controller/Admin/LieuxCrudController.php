@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Lieux;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class LieuxCrudController extends AbstractCrudController
 {
@@ -12,14 +14,11 @@ class LieuxCrudController extends AbstractCrudController
         return Lieux::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('Commune');
+        yield IntegerField::new('cp');
     }
-    */
+
 }

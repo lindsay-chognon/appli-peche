@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Pecheurs;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class PecheursCrudController extends AbstractCrudController
 {
@@ -12,14 +13,11 @@ class PecheursCrudController extends AbstractCrudController
         return Pecheurs::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('Nom');
+        yield TextField::new('Prenom');
     }
-    */
+
 }
