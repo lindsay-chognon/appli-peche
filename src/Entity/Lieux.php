@@ -47,4 +47,9 @@ class Lieux
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getCommune();
+    }
 }
