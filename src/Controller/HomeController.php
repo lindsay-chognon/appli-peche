@@ -13,7 +13,9 @@ class HomeController extends AbstractController
     #[Route('/home', name: 'app_home')]
     public function index(EntityManagerInterface $entityManager): Response {
 
-        $lieux = $entityManager->getRepository(Lieux::class)->findAll();
+        $lieux = $entityManager
+            ->getRepository(Lieux::class)
+            ->findAll();
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
