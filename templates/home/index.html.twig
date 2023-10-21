@@ -19,4 +19,11 @@
         <li>Your template at <code><a href="{{ '/home/lindsay/appli-peche/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
     </ul>
 </div>
+
+{% for lieu in lieux %}
+    <div>
+        <h2>{{ lieu.commune }}</h2>
+    </div>
+{% endfor %}
+
 {% endblock %}
